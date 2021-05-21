@@ -4,7 +4,7 @@ MAINTAINER Felix Valentino <felix@difinite.com>
 
 RUN dnf update -y && dnf -y groupinstall "Development Tools" \
     && dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm \
-   # && sed -i -e 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config && \
+#   && sed -i -e 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config && \
     && dnf install -y git wget net-tools sqlite-devel psmisc ncurses-devel libtermcap-devel newt-devel libxml2-devel libtiff-devel gtk2-devel libtool libuuid-devel \
     subversion kernel-devel crontabs cronie-anacron initscripts \
     && dnf -y install https://rpmfind.net/linux/fedora/linux/releases/32/Everything/x86_64/os/Packages/l/libedit-3.1-32.20191231cvs.fc32.x86_64.rpm \
@@ -70,7 +70,7 @@ RUN /bin/bash contrib/scripts/install_prereq install \
     menuselect.makeopts \
     && make && make install && make samples && make config && ldconfig
 
-CMD ["/sbin/init"]
+# CMD ["/sbin/init"]
 
 # EXPOSE 5060/udp 5061/tcp 8089/tcp 
 
