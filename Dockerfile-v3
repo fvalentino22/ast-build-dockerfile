@@ -70,7 +70,7 @@ RUN /bin/bash contrib/scripts/install_prereq install \
     menuselect.makeopts \
     && make && make install && make samples && make config && ldconfig
 
-# CMD ["/sbin/init"]
+CMD ["/sbin/init"]
 
 # EXPOSE 5060/udp 5061/tcp 8089/tcp 
 
